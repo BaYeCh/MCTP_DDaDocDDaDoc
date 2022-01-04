@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.member">
+
+	<select id="loginByIdPwd"  resultType="memberVO"   parameterType="java.util.HashMap" >
+	<![CDATA[
+		select * from member	
+		where id=#{id} and pwd=#{pwd}		
+	]]>
+	</select>
+	<select id="selectByNameEmail"  resultType="memberVO"   parameterType="java.util.HashMap" >
+	<![CDATA[
+		select * from member	
+		where name=#{name} and email=#{email} and birth=#{birth}		
+	]]>
+	</select>
+	<select id="selectByIdEmail"  resultType="memberVO"   parameterType="java.util.HashMap" >
+	<![CDATA[
+		select * from member	
+		where id=#{id} and email=#{email} and birth=#{birth}		
+	]]>
+	</select>
+	
+	<select id="selectById"  resultType="memberVO"   parameterType="String" >
+	<![CDATA[
+		select * from member	
+		where id=#{id}		
+	]]>
+	</select>
+	
+	<update id="updateById" parameterType="memberVO">
+	<![CDATA[
+		update member set id=#{id},pwd=#{pwd},tel=#{tel},name=#{name},email=#{email},birth=#{birth},nickname=#{nickname},address1=#{address1},address2=#{address2},address3=#{address3}
+		where id=#{id}		
+	]]>
+	</update>
+  
+     <insert id="insertMember"  parameterType="memberVO">
+		<![CDATA[
+		 insert into member(id, pwd, tel, name, email, birth, nickname, address1, address2, address3) 
+		 values(#{id}, #{pwd}, #{tel}, #{name}, #{email}, #{birth}, #{nickname}, #{address1}, #{address2}, #{address3})
+		]]>      
+	</insert>	
+     
+	 <select id="selectByEmail"  resultType="memberVO"   parameterType="String" >
+	<![CDATA[
+		select * from member	
+		where email=#{email}		
+	]]>
+	 </select>
+	  <select id="selectByNickName"  resultType="memberVO"   parameterType="String" >
+	<![CDATA[
+		select * from member	
+		where nickname=#{nickname}		
+	]]>
+	 </select>
+	 
+	  <select id="selectAll"  resultType="memberVO" >
+	<![CDATA[
+		select * from member		
+	]]>
+	 </select>
+	 
+	 <delete id="deleteById" parameterType="String" >
+	 	<![CDATA[
+		delete from member where id=#{id}	
+	]]>
+	 </delete>
+	 
+	 <update id="updateToAdmin" parameterType="String">
+	<![CDATA[
+		update member set admin=1
+		where id=#{id}		
+	]]>
+	</update>
+	
+	<update id="updateToMember" parameterType="String">
+	<![CDATA[
+		update member set admin=0
+		where id=#{id}		
+	]]>
+	</update>
+	
+	<select id="closedSelectAll"  resultType="closedVO" >
+	<![CDATA[
+		select * from closed		
+	]]>
+	 </select>
+	 
+	 <update id="closedUpdateById" parameterType="closedVO">
+	<![CDATA[
+		update closed set hospitalName=#{hospitalName},hospitalAddr=#{hospitalAddr},closedStart=#{closedStart},
+		closedEnd=#{closedEnd}
+		where closedId=#{closedId}		
+	]]>
+	</update>
+	
+	 <delete id="closedDeleteById" parameterType="String" >
+	 	<![CDATA[
+		delete from closed where closedId=#{closedId}	
+	]]>
+	 </delete>
+	 
+	 <insert id="closedInsert"  parameterType="closedVO">
+		<![CDATA[
+		 insert into closed(hospitalName, hospitalAddr, closedStart, closedEnd, writerId) 
+		 values(#{hospitalName}, #{hospitalAddr}, #{closedStart}, #{closedEnd}, #{writerId})
+		]]>      
+	</insert>	
+	
+	  <select id="closedSelectOne"  resultType="closedVO"   parameterType="String" >
+	<![CDATA[
+		select * from closed	
+		where closedId=#{closedId}		
+	]]>
+	 </select>
+	 
+	  <select id="selectClosedByName"  resultType="closedVO"   parameterType="String" >
+	<![CDATA[
+		select * from closed	
+		where hospitalName=#{name}		
+	]]>
+	 </select>
+	 
+	 <select id="selectEvalByHpid"  resultType="evalVO"   parameterType="String" >
+	<![CDATA[
+		select * from eval	
+		where hpid=#{hpid}		
+	]]>
+	 </select>
+	 
+	 <insert id="insertEval"  parameterType="evalVO">
+		<![CDATA[
+		 insert into eval
+		 values(#{title}, #{writer}, #{hosp_name}, #{location}, #{content},#{hpid})
+		]]>      
+	</insert>	
+	
+	<select id="searchById"  resultType="closedVO"   parameterType="String" >
+	<![CDATA[
+		select * from closed	
+		where writerId=#{writerId}
+	]]>
+	 </select>
+	 
+	 <select id="alreadyExist"  resultType="closedVO"   parameterType="closedVO" >
+	<![CDATA[
+		select * from closed	
+		where hospitalName=#{hospitalName} and closedStart=#{closedStart} and closedEnd =#{closedEnd}
+	]]>
+	 </select>
+
+</mapper>

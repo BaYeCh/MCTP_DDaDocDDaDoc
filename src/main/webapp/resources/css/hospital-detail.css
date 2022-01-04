@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+	font-size: 60px;
+	margin:5px;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-image: url('https://i.pinimg.com/564x/ba/a8/f1/baa8f1a647a84cc11e77a3379df3814c.jpg');
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.board-wrap {
+  width: 1000px;
+  margin: 100px auto;
+}
+
+.board-title {
+  margin-bottom: 30px;
+}
+
+.board-title h1 {
+  font-size: 2.5rem;
+}
+
+.board-title p {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.btn-wrap {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0;
+}
+
+.btn-wrap a {
+  display: inline-block;
+  min-width: 80px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 1rem;
+}
+
+.btn-wrap a:first-child {
+  margin-left: 0;
+}
+
+.btn-wrap a.on {
+  background-color: #000;
+  color: #fff;
+}
+
+.tab-area {
+  border-top: 1px #ddd dashed;
+}
+
+.board-hospital {
+  border-top: 2px solid #000;
+}
+
+.board-hospital .title {
+  padding: 20px;
+  font-size: 30px;
+}
+
+.board-hospital .content {
+  display: none;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 0;
+  resize: none;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  line-height: 200%;
+}
+
+input[type='radio']::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  background-color: #999;
+  margin-right: 10px;
+}
+
+table {
+  margin: 10px;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+table td:first-child {
+  width: 150px;
+}
+
+.board-write .title {
+  padding: 20px 15px;
+  font-size: 2rem;
+}
+
+.tab-area input[type='radio'] {
+  display: none;
+}
+
+.tab-area input[type='radio'] + label {
+  display: inline-block;
+  padding: 20px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+input[type='radio']:checked + label {
+  background-color: #ddd;
+}
+
+input[id='tab1']:checked ~ .cont1 {
+  display: block;
+}
+
+input[id='tab2']:checked ~ .cont2 {
+  display: block;
+}
+
+input[id='tab3']:checked ~ .cont3 {
+  display: block;
+}

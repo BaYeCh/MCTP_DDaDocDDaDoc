@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-image: url('https://i.pinimg.com/564x/ba/a8/f1/baa8f1a647a84cc11e77a3379df3814c.jpg');
+  margin: 20px 100px;
+}
+
+.logo {
+	font-size: 60px;
+	margin:5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.board-wrap {
+  width: 1000px;
+  margin: 100px auto;
+}
+
+.board-title {
+  margin-bottom: 30px;
+}
+
+.board-title h1 {
+  font-size: 2.5rem;
+}
+
+.board-title p {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.btn-wrap {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0;
+}
+
+.btn-wrap a {
+  display: inline-block;
+  min-width: 80px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 2px;
+  font-size: 1rem;
+}
+
+.btn-wrap a.on {
+  background-color: #000;
+  color: #fff;
+}
+
+
+.board-list {
+  width: 100%;
+  border-top: 2px solid #000;
+}
+
+.board-list .top {
+  border-bottom: 1px solid #ddd; 
+}
+
+.board-list .bottom {
+  border-bottom: 1px solid #000;
+}
+
+.list-title {
+  font-weight: bolder;
+}
+
+td {
+	text-align: center;
+	padding: 15px;
+	background-color: white;
+}
+
+table {
+	border-bottom: 1px solid black;
+}
+
+.board-page {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 0;
+}
+
+.list ~ td {
+	border-bottom: 1px solid black;
+}
+
+#delete {
+	background-color:inherit;
+	border: none;
+	font-size: 16px;
+	font-family: 'Noto Sans KR', sans-serif;
+	cursor: pointer;
+}
+
+.board-page a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-left: 0;
+  line-height: 100%;
+}
+
+.board-page a.btn {
+  font-size: 0.8rem;
+  padding-top: 9px;
+  letter-spacing: -1px;
+}
+
+.board-page a.num {
+  font-size: 1rem;
+  padding-top: 7px;
+}
+
+.board-page a.num.on {
+  border-color: #000;
+  background-color: #000;
+  color: #fff;
+}
+
+.board-page a:first-child {
+  border-left: 1px solid #ddd;
+}
