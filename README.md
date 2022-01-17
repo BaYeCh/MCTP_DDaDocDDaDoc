@@ -1,6 +1,6 @@
 # 프로젝트 문서
 
-## [기획안](https://docs.google.com/document/d/1CtGbC0H3NBle0a0pmEg9AGt7Ff6yFEn3/edit)
+## [기획안](https://docs.google.com/document/d/1Oa0vl5oGxZ5no02yYuV4xckNpoiLCoSh9NE3sBHk8Ek/edit)
 
 ## [결과 보고서](https://docs.google.com/document/d/1TBZswepFxvLI_i8bAuIOhGNdiubBxaC5fIssEQc-Kqs/edit)
 
